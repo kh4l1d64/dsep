@@ -13,6 +13,8 @@ import { OnRatingModule } from './on_rating/on_rating.module';
 import { OnSupportModule } from './on_support/on_support.module';
 import { HttpModule } from '@nestjs/axios';
 import { ConfigModule } from '@nestjs/config';
+import { SearchModule } from './search/search.module';
+import { RedisStoreModule } from './redis-store/redis-store.module';
 
 @Module({
   imports: [
@@ -30,6 +32,8 @@ import { ConfigModule } from '@nestjs/config';
       isGlobal: true,
     }),
     HttpModule,
+    SearchModule,
+    RedisStoreModule,
   ],
   controllers: [AppController],
   providers: [AppService],

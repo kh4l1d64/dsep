@@ -23,10 +23,11 @@ export default class SearchController {
     @Res() res: Response,
     @Body() searchDto: SearchDTO,
   ) {
-    searchDto.context.domain = 'dsep:courses';
+    console.log("searchDto at BPP: ", JSON.stringify(searchDto, null, 2));
+    searchDto.context.domain = 'onest:learning-experiences';
     searchDto.context.action = 'search';
-    searchDto.context.bpp_id = 'bpp.dsep.samagra.io';
-    searchDto.context.bpp_uri = 'https://bpp.dsep.samagra.io';
+    searchDto.context.bpp_id = 'bpp.sandbox.compass.samagra.io';
+    searchDto.context.bpp_uri = 'https://bpp-compass.loca.lt/';
     sendAcknowledgement(res, 'ACK');
     return this.searchService.handleSearch(searchDto);
   }

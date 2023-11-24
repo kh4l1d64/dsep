@@ -22,7 +22,7 @@ export class OnSelectController {
     @Res() res: Response,
     @Body() onSelectDto: OnSelectDTO,
   ) {
-    console.log('in BAP onselect');
+    console.log('in BAP onselect: ', JSON.stringify(onSelectDto, null, 2));
     sendAcknowledgement(res, 'ACK');
 
     return this.onSelectService.handleOnSelect(onSelectDto);
